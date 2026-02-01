@@ -1,4 +1,4 @@
-package main.java.com.example;
+package com.example;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,7 +8,7 @@ class UserServiceExceptionTest {
     @Test
     void testExceptionWithMessage() {
         String message = "Test error message";
-        UserServiceException exception = new UserServiceException(message);
+        main.java.com.example.UserServiceException exception = new main.java.com.example.UserServiceException(message);
         
         assertEquals(message, exception.getMessage());
     }
@@ -17,7 +17,7 @@ class UserServiceExceptionTest {
     void testExceptionWithMessageAndCause() {
         String message = "Test error message";
         Throwable cause = new RuntimeException("Root cause");
-        UserServiceException exception = new UserServiceException(message, cause);
+        main.java.com.example.UserServiceException exception = new main.java.com.example.UserServiceException(message, cause);
         
         assertEquals(message, exception.getMessage());
         assertEquals(cause, exception.getCause());

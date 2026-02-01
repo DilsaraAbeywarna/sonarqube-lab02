@@ -1,11 +1,11 @@
-package main.java.com.example;
+package com.example;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
-    private final Calculator calculator = new Calculator();
+    private final main.java.com.example.Calculator calculator = new main.java.com.example.Calculator();
 
     @Test
     void testAddition() {

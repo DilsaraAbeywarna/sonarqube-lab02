@@ -1,4 +1,4 @@
-package main.java.com.example;
+package com.example;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +11,7 @@ class AppTest {
         // The database operations will fail, but the Calculator should work
         assertDoesNotThrow(() -> {
             try {
-                App.main(new String[]{});
+                main.java.com.example.App.main(new String[]{});
             } catch (Exception e) {
                 // Expected to fail due to database connection
                 // We're verifying the code structure is sound
@@ -23,6 +23,6 @@ class AppTest {
     @Test
     void testAppClassExists() {
         // Verify App class can be instantiated
-        assertNotNull(App.class);
+        assertNotNull(main.java.com.example.App.class);
     }
 }
