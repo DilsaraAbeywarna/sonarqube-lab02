@@ -96,25 +96,25 @@ class UserServiceTest {
     }
 
     @Test
-    void testFindUserSuccess() throws Exception {
+    void testFindUserSuccess() {
         // This should succeed with H2 database
         assertDoesNotThrow(() -> userService.findUser("testuser"));
     }
 
     @Test
-    void testFindUserNotFound() throws Exception {
+    void testFindUserNotFound() {
         // This should not throw exception even if user not found
         assertDoesNotThrow(() -> userService.findUser("nonexistent"));
     }
 
     @Test
-    void testDeleteUserSuccess() throws Exception {
+    void testDeleteUserSuccess() {
         // This should succeed
         assertDoesNotThrow(() -> userService.deleteUser("testuser"));
     }
 
     @Test
-    void testDeleteUserNotFound() throws Exception {
+    void testDeleteUserNotFound() {
         // Deleting non-existent user should not throw exception
         assertDoesNotThrow(() -> userService.deleteUser("nonexistent"));
     }
