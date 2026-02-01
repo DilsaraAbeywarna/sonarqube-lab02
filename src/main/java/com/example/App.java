@@ -1,14 +1,22 @@
 package main.java.com.example;
 
-public class App {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-    public static void main(String[] args) throws Exception {
+public class App {
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
+
+    public static void main(String[] args) {
 
         Calculator calc = new Calculator();
-        System.out.println(calc.calculate(10, 5, "add-again"));
+        logger.info("Calculation result: {}", calc.calculate(10, 5, "add-again"));
 
         UserService service = new UserService("admin123");
-        service.findUser("admin");
-        service.deleteUser("admin");
+        try {
+            service.findUser("admin");
+            service.deleteUser("admin");
+        } catch (UserServiceException e) {
+            logger.error("User service operation failed", e);
+        }
     }
 }

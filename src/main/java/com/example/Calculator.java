@@ -4,12 +4,10 @@ public class Calculator {
 
     public int calculate(int a, int b, String op) {
         switch (op) {
-            case "add":
-            case "add-again":
+            case "add", "add-again":
                 return add(a, b);
 
-            case "sub":
-            case "sub-again":
+            case "sub", "sub-again":
                 return a - b;
 
             case "mul":
