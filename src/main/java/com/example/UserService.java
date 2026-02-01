@@ -9,8 +9,16 @@ import java.sql.SQLException;
 public class UserService {
 
     private final String password;
+    private final String connectionUrl;
+    private final String username;
 
     public UserService(String password) {
+        this("jdbc:mysql://localhost/db", "root", password);
+    }
+
+    public UserService(String connectionUrl, String username, String password) {
+        this.connectionUrl = connectionUrl;
+        this.username = username;
         this.password = password;
     }
 
@@ -53,6 +61,6 @@ public class UserService {
     }
 
     protected Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost/db", "root", password);
+        return DriverManager.getConnection(connectionUrl, username, password);
     }
 }
